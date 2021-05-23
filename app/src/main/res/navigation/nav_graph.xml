@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.isuscorp.ui.login.LoginFragment"
+        android:label="@string/login_text"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrerFragment"
+            app:destination="@id/registrerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrerFragment"
+        android:name="com.example.isuscorp.ui.login.RegistrerFragment"
+        android:label="@string/registrer"
+        tools:layout="@layout/fragment_registrer"
+        />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.isuscorp.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/dashboard_fragment" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_addTicketFragment"
+            app:destination="@id/addTicketFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_ticketDetailsFragment"
+            app:destination="@id/ticketDetailsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTicketFragment"
+        android:name="com.example.isuscorp.ui.dashboard.add.AddTicketFragment"
+        android:label="@string/add_ticket" >
+        <action
+            android:id="@+id/action_addTicketFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketDetailsFragment"
+        android:name="com.example.isuscorp.ui.dashboard.details.TicketDetailsFragment"
+        android:label="@string/ticket_details" >
+        <action
+            android:id="@+id/action_ticketDetailsFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_ticketDetailsFragment_to_editTicketFragment"
+            app:destination="@id/editTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTicketFragment"
+        android:name="com.example.isuscorp.ui.dashboard.edit.EditTicketFragment"
+        android:label="@string/edit_ticket" >
+        <action
+            android:id="@+id/action_editTicketFragment_to_ticketDetailsFragment"
+            app:destination="@id/ticketDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.isuscorp.ui.calendar.CalendarFragment"
+        android:label="@string/calendar"
+        tools:layout="@layout/calendar_fragment" />
+</navigation>
